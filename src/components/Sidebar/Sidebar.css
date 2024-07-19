@@ -30,6 +30,11 @@
     cursor: pointer;
 }
 
+.sidebar .plus {
+    width: 15px;
+    height: 20px;
+}
+
 .sidebar .recent {
     display: flex;
     flex-direction: column;
