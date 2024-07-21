@@ -56,7 +56,17 @@ const Main = () => {
             </div>
             <div className="result-data">
               <img src={assets.gemini_icon} alt="Gemini Icon" />
-              <p dangerouslySetInnerHTML={{ __html: resultData }}></p>
+                {loading
+                ?(
+                <div className='loader'>
+                    <hr />
+                    <hr />
+                    <hr />
+                </div>
+                ) : (
+                <p dangerouslySetInnerHTML={{ __html: resultData }}></p>)
+                }
+              
             </div>
           </div>
         )}
@@ -68,6 +78,12 @@ const Main = () => {
               value={input}
               type="text"
               placeholder="Enter a prompt here"
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  // Call the onSend function here
+                  onSend();
+                }
+              }}
             />
             <div>
               <img src={assets.gallery_icon} alt="Gallery Icon" />
