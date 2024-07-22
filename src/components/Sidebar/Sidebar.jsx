@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './Sidebar.css'
 import { assets } from '../../assets/assets'
 import { useState } from 'react'
@@ -8,17 +8,24 @@ import { GoQuestion } from "react-icons/go";
 import { VscHistory } from "react-icons/vsc";
 import { IoSettingsOutline } from "react-icons/io5";
 import { GoPlus } from "react-icons/go";
+import { Context } from '../../context/Context';
 
 const Sidebar = () => {
 
     const [extended, setExtended] = useState(false);
+    const {onSend, prevPrompts, setRecentPrompt, newChat} = useContext(Context);
+
+    const loadPropmt = async (prompt) => {
+        setRecentPrompt(prompt)
+        await onSend(prompt)
+    }
 
   return (
     <div className='sidebar'>
         <div className="top">
             <IoIosMenu className='menu' color='white' size={25} onClick={() => setExtended(prev=>!prev)} />
 
-            <div className='new-chat'>
+            <div onClick={() => newChat()} className='new-chat'>
                 <GoPlus className='plus' size={20}/>
                 {extended?<p>New Chat</p>:null}
             </div>
@@ -27,10 +34,15 @@ const Sidebar = () => {
                      <p className="recent-title">
                          Recent
                      </p>
-                     <div className="recent-entry">
-                         <LuMessageSquare />
-                         <p>What is react ...</p>
-                     </div>
+                     {prevPrompts.map((item, index) => {
+                        return (
+                             <div onClick={() => loadPropmt(item)} className="recent-entry">
+                                  <LuMessageSquare />
+                                  <p>{item.slice(0,18)} ...</p>
+                             </div>
+                        )
+                     })}
+                     
                     </div>
                  : null
             }
