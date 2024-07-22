@@ -2,6 +2,12 @@ import React from 'react'
 import './Sidebar.css'
 import { assets } from '../../assets/assets'
 import { useState } from 'react'
+import { IoIosMenu } from "react-icons/io";
+import { LuMessageSquare } from "react-icons/lu";
+import { GoQuestion } from "react-icons/go";
+import { VscHistory } from "react-icons/vsc";
+import { IoSettingsOutline } from "react-icons/io5";
+import { GoPlus } from "react-icons/go";
 
 const Sidebar = () => {
 
@@ -10,9 +16,10 @@ const Sidebar = () => {
   return (
     <div className='sidebar'>
         <div className="top">
-            <img onClick={() => setExtended(prev=>!prev)} className='menu' src={assets.menu_icon} alt="" />
+            <IoIosMenu className='menu' color='white' size={25} onClick={() => setExtended(prev=>!prev)} />
+
             <div className='new-chat'>
-                <img src={assets.plus_icon} className='plus' alt='' />
+                <GoPlus className='plus' size={20}/>
                 {extended?<p>New Chat</p>:null}
             </div>
             {extended
@@ -21,7 +28,7 @@ const Sidebar = () => {
                          Recent
                      </p>
                      <div className="recent-entry">
-                         <img src={assets.message_icon} alt="" />
+                         <LuMessageSquare />
                          <p>What is react ...</p>
                      </div>
                     </div>
@@ -30,15 +37,15 @@ const Sidebar = () => {
         </div>
         <div className="bottom">
             <div className="bottom-item recent-entry">
-                <img src={assets.question_icon} alt="" />
+                <GoQuestion size={21} />
                 {extended?<p>Help</p>:null}
             </div>
             <div className="bottom-item recent-entry">
-                <img src={assets.history_icon} alt="" />
+                <VscHistory size={21}/>
                 {extended?<p>Activity</p>:null}
             </div>
             <div className="bottom-item recent-entry">
-                <img src={assets.setting_icon} alt="" />
+                <IoSettingsOutline size={21}/>
                 {extended?<p>Settings</p>:null}
             </div>
         </div>
