@@ -88,11 +88,11 @@ const Main = () => {
             <div>
               <img src={assets.gallery_icon} alt="Gallery Icon" />
               <img src={assets.mic_icon} alt="Microphone Icon" />
-              <img
+              {input ? (<img
                 src={assets.send_icon}
                 alt="Send Icon"
-                onClick={() => onSend()} // Added missing semicolon
-              />
+                onClick={() => onSend()}
+              /> ):(null)}
             </div>
           </div>
           <p className="bottom-info">
