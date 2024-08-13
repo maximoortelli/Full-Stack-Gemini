@@ -1,7 +1,5 @@
-import React, { useContext } from 'react'
+import { useContext, useState } from 'react'
 import './Sidebar.css'
-import { assets } from '../../assets/assets'
-import { useState } from 'react'
 import { IoIosMenu } from "react-icons/io";
 import { LuMessageSquare } from "react-icons/lu";
 import { GoQuestion } from "react-icons/go";
@@ -13,12 +11,25 @@ import { Context } from '../../context/Context';
 const Sidebar = () => {
 
     const [extended, setExtended] = useState(false);
+    const [showHelpModal, setShowHelpModal] = useState(false);
+    const [showActivityModal, setShowActivityModal] = useState(false);
+    const [showSettingsModal, setShowSettingsModal] = useState(false);
     const {onSend, prevPrompts, setRecentPrompt, newChat} = useContext(Context);
 
     const loadPropmt = async (prompt) => {
         setRecentPrompt(prompt)
         await onSend(prompt)
     }
+
+    const toggleModal = (modal) => {
+        if (!extended) {
+            setExtended(true);
+            return;
+        }
+        if (modal === 'help') setShowHelpModal(prev => !prev);
+        if (modal === 'activity') setShowActivityModal(prev => !prev);
+        if (modal === 'settings') setShowSettingsModal(prev => !prev);
+    };
 
   return (
     <div className='sidebar'>
@@ -34,7 +45,7 @@ const Sidebar = () => {
                      <p className="recent-title">
                          Recent
                      </p>
-                     {prevPrompts.map((item, index) => {
+                     {prevPrompts.map((item) => {
                         return (
                              <div onClick={() => loadPropmt(item)} className="recent-entry">
                                   <LuMessageSquare />
@@ -48,19 +59,48 @@ const Sidebar = () => {
             }
         </div>
         <div className="bottom">
-            <div className="bottom-item recent-entry">
-                <GoQuestion size={21} />
-                {extended?<p>Help</p>:null}
+                <div className="bottom-item recent-entry" onClick={() => toggleModal('help')}>
+                    <GoQuestion size={21} />
+                    {extended ? <div>Help</div> : null}
+                    {showHelpModal && (
+                        <div className="modal-help">
+                            <div>
+                                <p>Privacy Center</p>
+                            </div>
+                            <div>
+                                <p>Updates</p>
+                            </div>
+                            <div>
+                                <p>Help</p>
+                            </div>
+                            <div>
+                                <p>FAQs</p>
+                            </div>
+                            <div>
+                                <p>About Gemini Advanced</p>
+                            </div>
+                        </div>
+                    )}
+                </div>
+                <div className="bottom-item recent-entry" onClick={() => toggleModal('activity')}>
+                    <VscHistory size={21} />
+                    {extended ? <p>Activity</p> : null}
+                    {showActivityModal && (
+                        <div className="modal-activ">
+                            <p>Activity Content</p>
+                        </div>
+                    )}
+                </div>
+                <div className="bottom-item recent-entry" onClick={() => toggleModal('settings')}>
+                    <IoSettingsOutline size={21} />
+                    {extended ? <p>Settings</p> : null}
+                    {showSettingsModal && (
+                        <div className="modal-content">
+                            <p>Settings Content</p>
+                        </div>
+                    )}
+                </div>
             </div>
-            <div className="bottom-item recent-entry">
-                <VscHistory size={21}/>
-                {extended?<p>Activity</p>:null}
-            </div>
-            <div className="bottom-item recent-entry">
-                <IoSettingsOutline size={21}/>
-                {extended?<p>Settings</p>:null}
-            </div>
-        </div>
     </div>
   )
 }

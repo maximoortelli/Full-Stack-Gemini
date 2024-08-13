@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import './Main.css'; // Assuming the CSS file exists in the same directory
 import { assets } from '../../assets/assets'; // Assuming the assets object is defined
 import { Context } from '../../context/Context'; // Assuming the Context component exists
@@ -13,6 +13,10 @@ const Main = () => {
     input,
     setInput,
   } = useContext(Context);
+
+  const handleCardClick = (text) => {
+    setInput(text);
+  };
 
   return (
     <div className="main">
@@ -30,20 +34,20 @@ const Main = () => {
               <p>How can I help you today?</p>
             </div>
             <div className="cards">
-              <div className="card">
-                <p>Suggest beautiful places to see on an upcoming road trip</p>
+              <div className="card" onClick={() => handleCardClick('Suggest beautiful places to see on an upcoming road trip')}>
+                <p>Suggest beautiful places to see on an upcoming road trip.</p>
                 <img src={assets.compass_icon} alt="Compass Icon" />
               </div>
-              <div className="card">
-                <p>Briefly summarize this concept: urban planning</p>
+              <div className="card" onClick={() => handleCardClick('Briefly summarize this concept: urban planning')}>
+                <p>Briefly summarize this concept: urban planning.</p>
                 <img src={assets.bulb_icon} alt="Light Bulb Icon" />
               </div>
-              <div className="card">
-                <p>Brainstorm team bonding activities for our work retreat</p>
+              <div className="card" onClick={() => handleCardClick('Brainstorm team bonding activities for our work retreat')}>
+                <p>Brainstorm team bonding activities for our work retreat.</p>
                 <img src={assets.message_icon} alt="Message Icon" />
               </div>
-              <div className="card">
-                <p>Improve the readability of the following code</p>
+              <div className="card" onClick={() => handleCardClick('Improve the readability of the following code')}>
+                <p>Improve the readability of the following code:</p>
                 <img src={assets.code_icon} alt="Code Icon" />
               </div>
             </div>
@@ -86,7 +90,6 @@ const Main = () => {
               }}
             />
             <div>
-              <img src={assets.gallery_icon} alt="Gallery Icon" />
               <img src={assets.mic_icon} alt="Microphone Icon" />
               {input ? (<img
                 src={assets.send_icon}
