@@ -38,11 +38,39 @@ a {
     padding: 20px;
 }
 
+/* Aplica el estilo al elemento p dentro del contenedor */
+.main .greet p {
+    display: inline-block; /* Hace que el elemento se comporte como un bloque en línea */
+    animation: textMove 1.2s linear forwards; /* Aplica la animación solo una vez */
+}
+
+@keyframes textMove {
+    0% {
+        transform: translateX(-30%); /* Comienza fuera del contenedor por la izquierda */
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0%); /* Termina fuera del contenedor por la derecha */
+        opacity: 1;
+    }
+}
+
 .main .greet span {
-    background: -webkit-linear-gradient( 16deg , #4b90ff, #ff5546);
+    background: -webkit-linear-gradient( 16deg , #4b90ffd3, #ff5646df, #4b90ffd3, #ff5646e3);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    background-size: 300%;
+    animation: gradientShift 1.8s linear infinite;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 100% 0%;
+    }
+    100% {
+        background-position: 0% 100% ;
+    }
 }
 
 .main .cards {
