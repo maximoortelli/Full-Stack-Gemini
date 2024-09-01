@@ -10,7 +10,7 @@
 
 - [📗 Table of Contents](#-table-of-contents)
 - [🔊🎧 Full Stack Spotify](#-full-stack-gemini)
-- [✅ Deployment](#-deployment)
+- [✅🚀 Deployment](#-deployment)
   - [🛠 Built With](#-built-with)
     - [Tech Stack](#tech-stack)
   - [💻 Getting Started](#-getting-started)
