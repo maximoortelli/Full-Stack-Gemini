@@ -3,7 +3,7 @@
    <h1>🤖✅ Full Stack AI Gemini ✅🤖</h1>
 </div>
   <div align="center">
-    <img src="./assets/presentation.jpg" />
+    <img src="./src/assets/presentation.jpg" />
   </div>
 
 # 📗 Table of Contents
@@ -62,7 +62,7 @@
         <a href="https://www.typescriptlang.org/">TypeScript</a>
      </li>
       <li>
-       <img src="./assets/eslint.png" width="50"/>
+       <img src="./src/assets/eslint.png" width="50"/>
        <a href="https://eslint.org">Eslint</a>
      </li>
       <li>
@@ -83,7 +83,7 @@
           <a href="https://nextjs.org/">Next.js</a>
        </li>
        <li>
-          <img src="./assets/gemini.png" width="50"/>
+          <img src="./src/assets/gemini.png" width="50"/>
           <a href="https://ai.google.dev/gemini-api/docs?hl=es-419">Gemini AI</a>
        </li>
   </ul>
