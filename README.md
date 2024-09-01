@@ -3,7 +3,7 @@
    <h1>🤖✅ Full Stack AI Gemini ✅🤖</h1>
 </div>
   <div align="center">
-    <img src="./assets/gemini.png" />
+    <img src="./assets/presentation.jpg" />
   </div>
 
 # 📗 Table of Contents
@@ -163,7 +163,7 @@ If you like this project please give it a star 😁🌟✨
 
 # 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-We thank to [Gemini and Google](https://ai.google.dev/gemini-api/docs?hl=es-419) for the design.
+I thank [Gemini and Google](https://ai.google.dev/gemini-api/docs?hl=en-US). This project is a replica to measure my skills as a Full Stack developer and improve my potential. This work is not intended to profit from or seek to do so, it is merely professional and personal evolution.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
