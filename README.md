@@ -130,20 +130,12 @@ You can start editing the page by modifying `src/main.jsx`. The page auto-update
 # 🔭 Future Features 
 <a name="future-features"></a>
 
-- [x] Tailwind design
-- [x] Tailwind animations and effects
-- [x] Full responsiveness
-- [x] Credential authentication
-- [x] Github authentication
-- [x] Client form validation and handling using react-hook-form
-- [x] Server error handling using react-toast
-- [x] Fetch data in server react components by directly accessing database.
-- [x] Handle files like error.tsx and loading.tsx which are new Next 13 templating files to unify loading and error handling
-- [x] Handle relations between Server and Child components!
-- [x] The functionality has been added so that the user can like to the songs and they will be saved in the favorites section.
-- [x] The functionality has been added so that the user can upload their song, with their author name, their song title and their cover image.
-- [x] It has the function of registering and logging in.
-- [x] PostgreSQL database connected successfully.
+- [x] Full responsiveness.
+- [x] Client form validation and handling using react-hook-form.
+- [x] Client rendering optimized correctly.
+- [x] Server error handling using react-toast.
+- [x] I successfully integrated Google AI through their API with the free version they offer on their official site.
+- [x] Animations have been successfully added to the application.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
