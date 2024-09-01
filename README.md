@@ -155,7 +155,7 @@ If you like this project please give it a star 😁🌟✨
 
 # 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I thank [Gemini and Google](https://ai.google.dev/gemini-api/docs?hl=en-US). This project is a replica to measure my skills as a Full Stack developer and improve my potential. This work is not intended to profit from or seek to do so, it is merely professional and personal evolution.
+I am grateful to Gemini and Google. This project is similar to measuring my own skills as a Full Stack developer and improving my potential. This work is not for profit and does not seek to do so, it is merely a professional and personal evolution.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
